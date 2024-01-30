@@ -1,11 +1,3 @@
-## React Base
+## Consumindo API com React
 
-Redux:
-
--> Estado inicial: {
-  usuario_logado: false
-}
-
--> acao -> reducer -> newState = state -> newState (newState passa a ser o novo estado da aplicacao)
-
-reducer ira ouvir uma acao e disparar um novo estado a partir dela
+Projeto para fins de estudos, onde estamos consumindo uma API nossa, junto ao React.
