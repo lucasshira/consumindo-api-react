@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // importando biblioteca PropTypes para definir tipos de propriedades
 import { Container, LoadingIndicator } from './styled';
 
 export default function Loading({ isLoading }) {
@@ -17,6 +17,7 @@ export default function Loading({ isLoading }) {
 }
 
 Loading.defaultProps = {
+  // valor padrao
   isLoading: false,
 };
 
