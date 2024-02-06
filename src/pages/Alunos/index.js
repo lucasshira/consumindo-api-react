@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture } from './styled';
+import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
 
 import Loading from '../../components/Loading';
 
@@ -32,7 +32,7 @@ export default function Alunos() {
 
   const handleDeleteAsk = (e) => {
     e.preventDefault();
-    const exclamation = e.currentTarget.nextSibling; // pegando o link do botão irmão
+    const exclamation = e.currentTarget.nextSibling; // pegando o link do botão de exclamação, que inicialmente ta oculto
     exclamation.setAttribute('display', 'block'); // quando clicado, seu display sera visivel
     e.currentTarget.remove(); // trocando o X pelo exclamação
   };
@@ -45,7 +45,7 @@ export default function Alunos() {
       await axios.delete(`/alunos/${id}`);
 
       const novosAlunos = [...alunos];
-      novosAlunos.splice(index, 1);
+      novosAlunos.splice(index, 1); // removendo o aluno excluido da copia do array
       setAlunos(novosAlunos);
       setIsLoading(false);
       toast.info('Aluno excluído com sucesso!');
@@ -66,6 +66,8 @@ export default function Alunos() {
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Alunos</h1>
+
+      <NovoAluno to="/aluno/">Novo aluno</NovoAluno>
 
       <AlunoContainer>
         {alunos.map((aluno, index) => (
