@@ -23,7 +23,7 @@ export default function Alunos() {
     async function getData() {
       setIsLoading(true);
       const response = await axios.get('/alunos');
-      setAlunos(response.data);
+      setAlunos(response.data); // Define o estado alunos com os dados obtidos na resposta da requisição.
       setIsLoading(false);
     }
 
