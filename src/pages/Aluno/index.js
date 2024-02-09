@@ -198,3 +198,7 @@ export default function Aluno({ match }) {
     </Container>
   );
 }
+
+Aluno.propTypes = {
+  match: PropTypes.shape().isRequired,
+};
